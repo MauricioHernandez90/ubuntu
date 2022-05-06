@@ -6,6 +6,6 @@
       apt:                                                #Utilizamos "apt" (comando que se utiliza en Debian y ubuntu para instalar paquetes)
         name:
           - "{{ zlib }}"                                  #utilizamos la variable zlib que declaramos en el archivo inventory
-        state: latest                                     #buscamos la ultima versión
+        state: latest                                     #buscamos la última versión
         update_cache: yes                                 #actualizamos el repositorio
     

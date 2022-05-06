@@ -3,4 +3,4 @@
   become: true
   tasks:
     - name: create test file 
-      command: touch /tmp/archivoprueba       #en este caso utilizamos el comando touch que creara un nuevo archivo vacio
+      command: touch /tmp/archivoprueba       #en este caso utilizamos el comando touch que creará un nuevo archivo vacio
