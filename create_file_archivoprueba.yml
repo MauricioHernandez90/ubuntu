@@ -1,0 +1,6 @@
+---
+- hosts: servidores                           #El playbook actuará directamente en el grupo servidores
+  become: true
+  tasks:
+    - name: create test file 
+      command: touch /tmp/archivoprueba       #en este caso utilizamos el comando touch que creara un nuevo archivo vacio

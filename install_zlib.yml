@@ -1,14 +1,11 @@
 ---
-- hosts: servidores
+- hosts: servidores                                       #El playbook actuará directamente en el grupo servidores
   become: true
-  tasks:
-    - name: install zlib package
-      apt:
+  tasks:                                                  #agrupamos las tareas a realizar
+    - name: install zlib package                          #Nombre de la tarea
+      apt:                                                #Utilizamos "apt" (comando que se utiliza en Debian y ubuntu para instalar paquetes)
         name:
-          - "{{ zlib }}"
-        state: latest
-        update_cache: yes
-    - name: create test file
-      command: sudo touch /tmp/archivoprueba
-      args:
-        creates: /tmp/archivoprueba
+          - "{{ zlib }}"                                  #utilizamos la variable zlib que declaramos en el archivo inventory
+        state: latest                                     #buscamos la ultima versión
+        update_cache: yes                                 #actualizamos el repositorio
+    
