@@ -1,0 +1,14 @@
+---
+- hosts: servidores
+  become: true
+  tasks:
+    - name: install zlib package
+      apt:
+        name:
+          - "{{ zlib }}"
+        state: latest
+        update_cache: yes
+    - name: create test file
+      command: sudo touch /tmp/archivoprueba
+      args:
+        creates: /tmp/archivoprueba
